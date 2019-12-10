@@ -1,0 +1,29 @@
+<Body onmousemove="dosomething()">
+
+<span style="position:absolute;top:0;left:0" id="nbs">
+	MakingMyWayDownTown, MovingFast
+</span>
+
+<input type="Text" id="screen" onmouseenter="Takethetext()">
+
+
+<html>
+
+<script>
+
+	function dosomething(){
+		var X = window.event.clientX;
+		var Y = window.event.clientY;
+		var ref1=window.document.getElementById("nbs");
+
+		ref1.style.top=Y;
+		ref1.style.left=X;
+	}
+
+		function Takethetext(){
+		var data=window.document.getElementById("screen").value;
+		window.document.getElementById("nbs").innerHTML=data;
+		}
+
+</script>
+</html>

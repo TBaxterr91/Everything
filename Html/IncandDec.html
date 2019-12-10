@@ -1,0 +1,18 @@
+<Html>
+
+<input type="Text" id="T1" value="0">
+<input type="Button" value="Increment" onmousemove="Increment()">
+<input type="Button" value="Decrement" onmousemove="Decrement()">
+
+	<Script>
+function Increment(){
+	var ref1=window.document.getElementById("T1");
+		ref1.value=parseInt(ref1.value)+1;
+}
+
+function Decrement(){
+	var ref1=window.document.getElementById("T1");
+		ref1.value=parseInt(ref1.value)-1;
+}
+	</Script>
+</Html>

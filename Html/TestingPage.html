@@ -1,0 +1,222 @@
+<html>
+<head>
+<link rel="stylesheet" href="styleclass.css">
+</head>
+<script>
+
+
+function request(){
+console.log("helloo");
+const Http = new XMLHttpRequest();
+const url='http://localhost:9001/showallrecords';
+Http.open("GET", url);
+Http.onreadystatechange = function(e){
+console.log("status"+Http.readyState);
+if (Http.readyState==4){
+	data=JSON.parse(Http.responseText);
+	var A=0;
+	console.log("length:"+data.length);
+	data.forEach(function(item){
+		var regno=document.createElement("span");
+		var name=document.createElement("span");
+		var marks=document.createElement("span");
+		regno.innerHTML=item.regno;	
+		name.innerHTML=item.name;
+		marks.innerHTML=item.marks;
+		document.body.appendChild(regno);
+		document.body.appendChild(name);
+		document.body.appendChild(marks);	
+		A=A+1;
+		console.log(A);
+	});
+}
+}
+Http.send();
+}
+
+
+
+function request(){
+console.log("helloo");
+const Http = new XMLHttpRequest();
+const url='http://localhost:9001/addrecord2';
+​
+Http.open("POST", url,true);
+Http.setRequestHeader("Content-Type", "application/json");
+​
+​
+const fd = {
+  'regno': '1131',
+  'name': 'manchetser',
+  'marks': '65'
+};
+​
+Http.onreadystatechange = function(ev) {
+	console.log("hello");
+}	  
+Http.send(JSON.stringify(fd));
+}
+
+
+function addTrainer() {
+	var firstName = document.getElementById('firstname').value;
+	var surname = document.getElementById('surname').value;
+	var trainer = new Object();
+	trainer.firstName = firstName;
+	trainer.surname = surname;
+	var trainerJSON = JSON.stringify(trainer);
+	$.ajax({
+		type : "DELETE",
+		url : "http://localhost:8081/trainerapp/trainer",
+		contentType : "application/json",
+		data : trainerJSON,
+		success : function(data) {
+			console.log(data);
+		},
+		error : function(data) {
+			console.log(data);
+		},
+		dataType : 'json'
+	});
+}
+
+
+
+.addG {
+ background-color: grey;
+ color: black;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:100px; left:128px
+ ;
+}
+.addG:hover {
+ background-color: #4CAF50;
+ color: white;
+}
+        .updateG {
+ background-color: grey; s
+ color: black;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:100px;left:210px;
+}
+.updateG:hover {
+ background-color: #0831DE;
+ color: white;
+}
+        .deleteG {
+ background-color: grey;
+ color: black;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:100px;left:310px;
+}
+.deleteG:hover {
+ background-color: #E1041C;
+ color: white;
+}
+        .Filter {
+ background-color: grey;
+ color: black;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:100px;left:1100px;
+}
+.Filter:hover {
+ background-color: #E89C07;
+ color: white;
+}
+   .delG {
+ background-color: grey;
+ color: black;
+ font-size: 14px;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:100px;left:210px;
+}
+.delG:hover {
+ background-color: #E1041C;
+ color: white;
+}
+   .addGame {
+ background-color: grey;
+ color: black;
+ font-size: 14px;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:100px
+}
+.addGame:hover {
+ background-color: #4CAF50;
+ color: white;
+}
+   .updG {
+ background-color: grey;
+ color: black;
+ font-size: 14px;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:100px
+}
+.updG:hover {
+ background-color: #0831DE;
+ color: white;
+}
+.showRecs {
+background-color: white;
+position: absolute; top:175px; left:140px;
+height: 400;
+font-size: 30px;
+width: 1000;
+opacity: 0.8;
+color:black;
+}
+.delform{
+ background-color: lightseagreen;
+ color:white;
+}
+.maintable{
+ border-radius: 25px;
+   background-color: greenyellow;
+ opacity:0.9;
+ color:black;
+position: absolute; top:175px; left:140px;
+height: 400;
+width: 1000;
+font-size: 30px;
+;
+}
+.heading{
+ padding: 7px 20px;
+ top: 50%;
+ left: 50%;
+ color:white;
+}
+.text{
+ color:white;
+}
+.delform1{
+ background-color: lightseagreen;
+ color:white;
+}
+.textfield{
+ border-style: solid;
+ position:absolute;
+ left:100px;
+ border-radius: 25px;
+}
+.title{
+font-family: 'Cabin', Helvetica, Arial, sans-serif;
+font-size: 55px;
+line-height: 25px;
+}
+
+
+
+
+</script>
+
+</html>
+
+

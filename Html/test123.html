@@ -1,0 +1,74 @@
+
+
+<html>
+
+	<span id="cities" style="position:absolute;top:100;left:50" onclick="clickmenu('CityMenu','SportsMenu')">
+	Cities
+	</span>
+	<span id="sports" style="position:absolute;top:100;left:250" onclick="clickmenu('SportsMenu','CityMenu')">
+	Sports
+	</span>
+
+
+<span id="CityMenu" style="position:absolute;top:100;left:50;visibility:hidden">
+		<span id="London" style="position:absolute;top:105;left:50" onmouseenter="menuitem(this, 'blue')" 																		onmouseleave="menuitem(this, 'white')">
+		London
+		</span>
+
+		<span id="Swindon" style="position:absolute;top:125;left:50" onmouseenter="menuitem(this, 'blue')" 																		 onmouseleave="menuitem(this, 'white')">
+		Swindon
+		</span>
+
+		<span id="Manchester" style="position:absolute;top:145;left:50" onmouseenter="menuitem(this, 'blue')" 																		onmouseleave="menuitem(this, 'white')">
+		Manchester
+		</span>
+</span>
+
+<span id="SportsMenu" style="position:absolute;top:100;left:50;visibility:hidden">
+		<span id="Football" style="position:absolute;top:105;left:250" onmouseenter="menuitem(this, 'blue')" 																		onmouseleave="menuitem(this, 'white')">
+		Football
+		</span>
+
+		<span id="Rugby" style="position:absolute;top:125;left:250" onmouseenter="menuitem(this, 'blue')" 																		 onmouseleave="menuitem(this, 'white')">
+		Rugby
+		</span>
+
+		<span id="Hockey" style="position:absolute;top:145;left:250" onmouseenter="menuitem(this, 'blue')" 																		onmouseleave="menuitem(this, 'white')">
+		Hockey
+		</span>
+</span>
+	
+<!-- 	<input type="button" style="position:absolute;top:25;left:200" id="Header" value="ARK DINOSAUR TRACKER" onmouseenter="changecolor('red')">
+
+	<input type="button" style="position:absolute;top:100;left:50" id="Green" value="Update/Delete Dino" onmouseenter="changecolor('green')">
+
+	<input type="button" style="position:absolute;top:150;left:50"id="Blue" value="Search Existing Dinos" onmouseenter="changecolor('blue')"> -->
+	
+	<script>
+
+			function menuitem(ref, color){
+				ref.style.backgroundColor=color;
+			}
+
+		function clickmenu(MenuVis, MenuHid){
+		var ref1= document.getElementById(MenuVis);
+		var ref2= document.getElementById(MenuHid);
+		ref1.style.visibility="visible";
+		ref2.style.visibility="hidden";
+		}
+
+// 	function addDino(){
+// 	// window.open('calc.html');
+// 	var refadd= document.getElementById("addmenu");
+// 	refadd.style.visibility="visible";
+// 	refadd.style="width:275px;height:250px;position: fixed;background-color:grey;top: 50%;left: 50%;margin-top: -100px;margin-left: -100px";
+// }
+
+
+
+
+	</script>
+</html>
+
+
+          

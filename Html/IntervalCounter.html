@@ -1,0 +1,25 @@
+<html>
+
+<input type="text" id='T1' value="0">
+<input type="button" onclick="startcounting()" value="Start Counting">
+<input type="button" onclick="stopcounting()" value="Stop Counting">
+
+<script>
+var Timer;
+
+function startcounting(){
+	var refT=document.getElementById("T1");
+	Timer=window.setInterval(
+			function(){
+				refT.value=parseInt(refT.value)+1;
+				},1000);
+}
+
+function stopcounting(){
+	window.clearInterval(Timer);
+}	
+
+
+</script>
+
+</html>
