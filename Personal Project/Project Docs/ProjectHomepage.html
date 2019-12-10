@@ -1,0 +1,153 @@
+<header>
+   <!--  <Style= font-size:30>
+        <font size="30"><font color="grey" face="JFRockOutcrop"><B><u>Ark Dino Tracker</u></B></font> </font>
+        </style> -->
+        <img id="NEWTITLE" src="NEWTITLE.png" alt="TITLE" style="position:absolute;top:25px;left:25px;width:700px;height:100px;visibility:visible">
+    </header>
+
+<audio id="rexroar" src="rexroar.wav" ></audio>
+
+<html>
+
+<link rel="stylesheet" href="CSSStuff.css">
+
+<style>
+    body{
+    background-image: url("dinobike.gif");
+ 	background-repeat: no-repeat;
+ 	background-size: 100%
+}
+</style>
+
+<center><span id="existingdinoMenu" class="container" style="position:absolute;top:125px;left:200px;visibility:hidden; background-color:olivedrab; border: 1px solid black;border-radius: 25px;" class="Filter">
+          
+  <table class="table" id="dinoTable" style="background-color:olivedrab">
+    <head>
+    	<thead>Existing Dino Details</thead>
+      <tr>
+        <th>Nickname</th>
+        <th>Diet</th>
+        <th>Lifespan</th>
+        <th>Species</th>
+        <th>Strength</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="tablebody">
+   
+   
+
+    </tbody>
+  </table>
+</span></center>
+
+
+
+
+<input type="button" onclick="addnewdino();playrexroar()" value="Add New Dino" id="mainmenubutton" style="border-radius: 25px;position:absolute;top:125px;left:50px" class="Filter">
+<input type="button" onclick="getexistingdinos()" value="Search Existing Dinos" style="position:absolute;top:150px;left:50px;border-radius: 25px;" class="Filter">
+<input type="button" onclick="updatedino()" value="Update Dino" style="border-radius: 25px;position:absolute;top:175px;left:50px" class="Filter">
+<input type="button" onclick="imagedino()" value="Dino Images" style="border-radius: 25px;position:absolute;top:210px;left:50px" class="Filter">
+<input type="button" onclick="soundss()" value="Dino Sounds" style="border-radius: 25px;position:absolute;top:235px;left:50px" class="Filter">
+<input type="button" onclick="exitMenu()" value="Exit Menu" style="border-radius: 25px;position:absolute;top:270px;left:50px" class="Filter">
+
+
+
+
+
+
+
+
+<form id="addnewdinomenu" style="visibility:hidden;" class="Filter" onsubmit="return checkvalues()">
+
+ <U><b><center>Add New Dino Infomation</center></b></U><br><br>
+  Nickname:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Nickname" id="a1"><br><br>
+ Diet:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Diet" id="a2"><br><br>
+ Lifespan:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Lifespan" id="a3"><br><br>
+ Species:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Species" id="a4"><br><br>
+ Strength:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Dino Strength" id="a5"><br><br>
+
+ <input type="button" onclick="addnewdino2();return checkvalues()" id="addbutton" value="Add Dino" style="border-radius: 25px;position:absolute;top:260px;left:100px">
+ </form>
+
+
+<form id="updatedinomenu" style="visibility:hidden;" class="Filter" onsubmit="return checkvalues()">
+
+ <U><b><center> Update Existing Dino Infomation </center></b></U><br><br>
+  Nickname:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Nickname" id="u1"><br><br>
+ Diet:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Diet" id="u2"><br><br>
+ Lifespan:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Lifespan" id="u3"><br><br>
+ Species:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Species" id="u4"><br><br>
+ Strength:
+ <input onclick="cleartextonclick(this)" style="padding-left:7px;border-radius: 25px;position:absolute;left:100px" type="text" placeholder="Enter Dino Strength" id="u5"><br><br>
+ <input type="button" onclick="updatedino2();return checkvalues2()" value="Update Dino" style="border-radius: 25px;position:absolute;top:260px;left:100px">
+
+ </form>
+
+<form id="deletedinomenu" style="visibility:hidden;" class="Filter" onsubmit="return checkvalues()">
+
+ <U><b><center> Delete an Existing Dino</center></b></U><br><br>
+
+ Nickname:
+ <input onclick="cleartextonclick(this)" style="position:absolute;left:100px" type="text" placeholder="Enter Nickname" id="d1"><br><br>
+
+ <input type="button" onclick="deletedino2()" value="Delete Dino" style="position:absolute;top:125px;left:100px">
+ </form>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="ProjectFunctions.js"></script>
+<script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<form id="soundsMenu" style="visibility:hidden;">
+
+ <U><b><center>Check Your Dino Sounds!</center></b></U><br><br>
+ T-Rex:
+ <input type="button" onclick="playrexroar()"  class="Filter" value="T-Rex Roar" style="border-radius: 25px"> <br><br>
+ Ptera:
+ <input type="button" onclick="playpteraroar()"  class="Filter" value="Ptera Scream" style="border-radius: 25px"> <br><br>
+ Raptor:
+ <input type="button" onclick="playraptorroar()" class="Filter" value="Raptor Roar" style="border-radius: 25px"> <br><br>
+ Dragon:
+ <input type="button" onclick="playdragonroar()"  class="Filter" value="Dragon Roar" style="border-radius: 25px"> <br><br>
+ </form>
+
+ <audio id="rexroar" src="rexroar.wav" ></audio>
+ <audio id="pteraroar" src="pteraroar.wav" ></audio>
+ <audio id="raptorroar" src="raptorroar.wav" ></audio>
+ <audio id="dragonroar" src="newdragonroar.wav" ></audio>
+
+<form id="imagemenu" style="visibility:hidden;">
+
+ <U><b><center>See Pictures of Your Dinosaurs!!</center></b></U><br><br>
+ T-Rex:
+ <input type="button" onclick="trexpicture()"  class="Filter" value="T-Rex" style="border-radius: 25px"> <br><br>
+ Pteradactyl:
+ <input type="button" onclick="pterapicture()"  class="Filter" value="Pteradactyl" style="border-radius: 25px"> <br><br>
+ Raptor:
+ <input type="button" onclick="raptorpicture()" class="Filter" value="Raptor" style="border-radius: 25px"> <br><br>
+ Dragon:
+ <input type="button" onclick="dragonpicture()"  class="Filter" value="Dragon" style="border-radius: 25px"> <br><br>
+ </form>
+
+
+<img id="trexpicture" src="trexpicture.jpg" alt="Trex Picture" style="width:250px;height:250px;visibility:hidden; position:absolute;top:135px;left:650px">
+<img id="pterapicture" src="pterapicture.jpg" alt="Ptera Picture" style="width:250px;height:250px;visibility:hidden; position:absolute;top:135px;left:650px">
+<img id="raptorpicture" src="raptorpicture.jpg" alt="Raptor Picture" style="width:250px;height:250px;visibility:hidden; position:absolute;top:135px;left:650px">
+<img id="dragonpicture" src="dragonpicture.jpg" alt="Dragon Picture" style="width:250px;height:250px;visibility:hidden; position:absolute;top:135px;left:650px">
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,19 @@
+
+
+
+.Filter {
+      font-family: 'Cabin', Helvetica, Arial, sans-serif;
+ background-color: grey;
+ color: black;
+ border: 2px solid #000103;
+ border-radius: 25px;
+ position:absolute;top:125px;left:1080px;
+}
+
+.Filter:hover {
+ background-color: #E89C07;
+ color: white;
+}
+
+
+

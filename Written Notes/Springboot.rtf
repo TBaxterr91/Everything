@@ -1,0 +1,69 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red255\green0\blue0;\red0\green77\blue187;}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+\b\fs28 Web Applications\b0\fs22\line\line\b WebBrowser\b0 ------------------------\b WebServer\b0\line eg FireFox\tab\tab\tab BBC\line\b Sends Request\tab\b0\tab\tab\b Receives & Fulfills Request\b0\line Software\tab\tab\tab Software\par
+Server will always be software\line\line The \b Client\b0  for the \b Internet\b0  is the \b WEB BROWSER \b0 (Chrome, firefox etc)\line\line A \b Network\b0  is simply a collection of devices\line A \b Node \b0 is simply a particular device within a Network (Laptop, PC, Printer etc)\par
+\b Every Network will have a unique address\line\tab Within every Network each Node will have a unique address\par
+\b0 Eg Countries might be A, B, C\line\tab Within A Cities might be 1, 2, 3, 4\line\tab Then Cities within a County might be A1, A2, B1, C4 etc\line\line\b IP Address for THIS MACHINE - 127.0.0.1 - Also known as LocalHost\b0\line IP Address - 192.196.121.31\line Subnet Mask - 255.255.0.0\par
+You can use the Subnet Mask to identify the part of the IP address that refers to the \b NETWORK\b0  address\line\tab eg - The network address for the above would be 192.196\line\tab\tab The later numbers (121.31 etc would be identifying  a specific machine)\line\line A \b Port \b0 is where there request is received by the Server\line\tab Different Software on the Server will have different Ports to receive dif requests\line The \b Port number \b0 comes after the IP Address with a :\line\tab eg 192.196.121.31\cf1\b\fs24 :80\line\line\tab ONLY ONE SOFTWARE CAN RECEIVE REQUESTS AT EACH PORT PER SERVER\line\line\cf0\fs22 WebBrowsers requests will always default to port 80\b0\line If you want to send the request to a different Port must put this at the end of request \tab\tab  eg - tombaxter.co.uk:100\line\line\b Domain - \b0 Word in English for the IP Address - eg tombaxter.co.uk\line\tab You need to \b BUY THE DOMAIN/IP ADDRESS \b0 to own a \b Server\b0\line\tab\tab Eg like buying a phone - You BUY the phone number from Vodafone\line\line\b DNS (Domain Name Server)\b0\line\tab This is a Table within a Database that connects IP Addresses to Domain Names\line\tab\tab eg\tab IP Address\tab\tab Domain Name\line\tab\tab\tab 192.196.121.31\tab\tab tombaxter.co.uk\line\line\par
+\ul\b\fs36 SPRINGBOOT\ulnone\b0\fs22\par
+\b SpringBoot is a Java Framework\line\tab A Framework is a collection of Classes and Methods to make life easier\b0\par
+\b Controller\b0  - This is a Java Class\b\line @RestController \b0 - This is called an ANNOTATION - This is on the SERVER software\line\line\b Requests from my machine to Server\b0\line localhost:8080/login\line localhost:8080/balance\par
+\b These  requests will go to the \cf1 WebsServer which will send the request on to the RestController \cf0 to see if there is a Method within the RestController in relation to the request (eg Login code or Balance code)\line\cf1 You can have numerous Rest Controllers\line\tab Eg a different one for each dif department within a company\line\line\cf0 @RequestMapping - This identifies what method should be used to respond to the request\par
+\b0 Eg @RestController\line class MyFirstController\{\line\tab\line\tab\b @RequestMapping\b0 ("/login/")\line\tab public String login()\{\line\tab  - Code to allow log in - user.password etc\line\tab\}\line\tab\line\tab\b @RequestMapping\b0 ("/balance")\line\tab public float balance()\{\line\tab - Code to retrieve and return current balance -\line\tab return (balance)\line\tab\}\par
+\line\line\b There are different types of Requests \b0\line\tab\b\fs28 Get\fs22  Request \b0 - You want to get/retrieve something from the Server\line\tab\b\fs28 Post\fs22  Request \b0 - You are sending something to be stored\line\tab\b\fs28 Delete\fs22  Request \b0 - Deleting something\line\tab\b\fs28 Put \fs22 Request \b0 - Updating something\line\line eg\line\line Get localhost:8080/Records\line Post localhost:8080/Records\par
+Within the method in your coding, you would need to specify what action you want to take depending on the type of request received.\line\tab eg if Get - send a record back\line\tab     if push - store the record in the database\line You do this in the method by \line\tab\b @RequestMapping\b0 ("\cf1\fs24 method=RequestMethod.GET, value=\cf0\fs22 "/Records")\line\tab public float GetRecord()\{\line\tab - Code to retrieve and return record-\line\tab return (record)\line\tab\}\line\par
+\b\par
+localhost:8080/ADD/8/9\line\tab This will send through the numbers to the ADD method which need to be used\par
+\b0\tab\b @RequestMapping\b0 ("method=RequestMethod.GET, value="/\cf1\fs28 Add/\{A\}/\{B\}")\cf0\fs22\line\tab public String Add(@PathVariable int A, @PathVariable int B)\{\line\tab int result = A+B;\line\tab return "Result: " result\line\tab\}\line\line\ul\b SHORTHAND FOR SPECIFIC REQUESTS RATHER THAN @Requestmapping etc\ulnone\b0\line\cf1 @Getmapping("/showall")\line @PostMapping("/insert")\par
+\cf0 localhost:8080/Operation/8/+/9\line localhost:8080/Operation/8/-/9\par
+\line\b WebServer\b0\line\b When a \fs24 WebServer \fs22 receives a request it creates 2 Objects\b0\line\tab\b Request \b0 - All the info about the request, variables etc\line\tab\b Response\b0  - Uses the methods within the coding to retrieve the desired info\par
+The client does not interact directly with the end server, the Web Server acts as a middleman between the application and the client\line\line\line\line\line\ul\b\fs28 SETTERS AND GETTERS\ulnone\b0\fs22\line\b setMethod - Methods that store a value in a variable\b0\line\tab public void setMarks(a)\{\line\tab\tab Marks=a;\line\tab\tab\}\line\b getMethod - Methods that retrieve a value in a variable\line\b0\tab public int getMarks\{\line\tab\tab return Marks;\line\tab\tab\}\par
+\line\line\ul\b\fs24 Dependencies\ulnone\b0\fs22\line Class DBF is dependent on class DATA - If Class DATA were to be deleted class DBF would not compile as it is creating the object of Data and would encounter an error if Data was not there.\line\line eg\tab Class Data\{\line\tab\tab -code etc-\line\tab\tab\}\line\line\tab Class DBF\{\line\tab data x = new data();\line\tab - code using x -\line\}\line\line Should try to minimise/eradicate dependencies where possible.\par
+\par
+\par
+If you want Springboot to create the object FOR YOU, which reduces dependencies, use the annotation \ul\b\fs28 @component\ulnone\b0\fs22  above the CLASS of the class you want Springboot to create the object for\line\line Then, use \ul\b\fs28 @autowired \ulnone\b0\fs22 above the reference variable within the other Class where you want to reference this.\line\line\b @Component\b0\line Class StudentService\line\tab (ArrayList code, plus method to add a new student)\line\line Seperate Class\line @RestController\line Class MyController\line\b\tab @Autowired\line\b0\tab private StudentService serviceref;\line @RequestMapping(etc etc)\line\tab serviceref.addrecord();\par
+\par
+\ul\b XML/JSON - These are plain text files that store the data, independant of any software\ulnone\b0\line\line\b XML\b0  - Data will always be inside Tags\line\line\b JSON\b0  - Data will always start \{ and end with  \} - Always works with Key Value\line\tab eg Regnum is a Key, 10 is Value\line\tab everything must have a Key and Value\line\tab\b details.json\b0\line\tab eg \line\{\par
+\tab "diet": "Berries",\par
+\tab "lifespan": 1000,\par
+\tab "nickname": "Chompy",\par
+\tab "picture": "Link2piccccc",\par
+\tab "species": "Shark",\par
+\tab "strength": "Swim"\par
+\tab\}\line -----------------------------------------------------------------------------------------------------------\par
+\line SpringWeb\line\line MySQL\line\line JPA - Between Springboot and the Database\par
+\line\line Application.properties\line\tab server.port=9001\line\tab spring.datasource.\par
+\cf1\ul\b\fs28 @Entity\line\ulnone\b0\tab\ul\b This at the top of a class will connect it with a table within SQL\line\cf0\ulnone\b0\fs22\line eq\line\tab @Entity\line\tab class School\{\line\tab @id\tab\tab\tab\tab\cf1 This identifies the primary key/variable\cf0\line\tab private int Regnum;\line\tab private String Name;\line\tab private int Marks;\line\tab private String Subject\line\tab\}\line\line\cf1 If Table and class names are different need to use\cf0\line @Entity\line @table(name=(School))\line class Boom\par
+\par
+\b @Repository\tab\tab\tab\cf1\i Integer needs to be the DATATYPE of the PRIMARY KEY\cf0\line\i0 interface SchoolRepo extends JPARepository(\cf2 School\cf0 , \cf1 Integer\cf0 )\{\line\tab\tab\tab\tab\cf2\i School needs to be the ENTITY NAME (CLASS NAME)\i0\line\cf0 public ArrayList<School> findAll();\cf2\b0\line\}\cf0\par
+-------------------------------------------------------------------------------------------------------------\par
+\par
+@Entity\line @NameQueries(value=\{\line\tab\tab\tab @NameQuery(\line\tab\tab\tab\tab Name="School.showMaxMarks'\line\tab\tab\tab\tab Query="Select max(P.marks) from School P"\line\tab\tab\tab\tab )\line\tab\tab\tab\})\line\line @Service\line Class SchoolService\{\line @AutoWired\line private schoolrepository repo\line public int findMaxMarks()\line return repo.findMaxMarks();\line\}\par
+\par
+When sending more than one parameter into the @Namequeries, the syntax ?1 or ?2 lets the system know which parameter should go where\line @Entity\line @NameQueries(value=\{\line\tab\tab\tab @NameQuery(\line\tab\tab\tab\tab Name="School.showMaxMarks'\line\tab\tab\tab\tab Query="Select max(P.marks) from School P where P.dept=?1"\line\tab\tab\tab\tab )\line\tab\tab\tab\})\line\line\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
