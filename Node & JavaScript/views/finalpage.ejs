@@ -1,0 +1,16 @@
+<html>
+ <center>
+ 	<H1> Timestable of <%= T %> and the range of <%= R %></H1> 
+ 	<br>
+ 	See your Timestable Below
+ 	<br>
+ 	<% 
+ 		for(var i=1;i<=R;i++)
+ 		{
+ 	%>
+			<%= T %> x <%=i %> = <%= T*i%>
+			<br>
+			<%
+			} %>
+
+ </html>
