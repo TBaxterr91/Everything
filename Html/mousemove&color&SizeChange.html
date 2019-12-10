@@ -1,0 +1,46 @@
+<Body onmousemove="dosomething()">
+
+<span style="position:absolute;top:0;left:0" id="nbs">
+	MakingMyWayDownTown, MovingFast
+</span>
+
+<html>
+
+
+	<input type="button" id="Red" value="TURN Red" onmouseenter="changecolor('red')">
+	<input type="button" id="Green" value="TURN Green" onmouseenter="changecolor('green')">
+	<input type="button" id="Blue" value="TURN Blue" onmouseenter="changecolor('blue')">
+	
+	<script>
+
+		var font=10;
+
+	function changecolor(C){
+		document.getElementById("nbs").style.color = C;
+		}
+
+	function dosomething(){
+		var X = window.event.clientX;
+		var Y = window.event.clientY;
+		var ref1=window.document.getElementById("nbs");
+		ref1.style.top=Y;
+		ref1.style.left=X;
+		
+		if (window.event.ctrlKey){
+			font++;
+
+		}
+		if (window.event.altKey){
+			font--;
+
+		}
+	ref1.style.fontSize=font;
+	}
+
+	</script>
+</html>
+
+
+          
+    
+        

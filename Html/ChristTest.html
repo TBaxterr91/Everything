@@ -1,0 +1,62 @@
+
+
+<html>
+<body>
+	<form onsubmit="return postData(this)">
+		<input name="name" type="text" placeholder="enter duckname">
+		<input name="colour" type="text" placeholder="enter colour">
+		<input type="submit">
+	</form>
+	<ul id="ducklist">
+</body>
+</html>
+
+<script>
+
+	function getInfo(){
+		let request = new XMLHttpRequest();
+		request.open("GET", 'http://localhost:9100/ShowAll');
+		request.setRequestHeader("Content-Type","application/JSON")
+		request.onload=function(){
+			renderData(JSON.parse(request.response))
+		}
+		request.send();
+	}
+	getInfo();
+
+
+	function renderData(jsData){
+		let list = document.getElementById("ducklist");
+		list innerHTML="";
+		for(let duck of jsData){
+			let listitem = document.getElementById("ul");
+			listitem.innerText=duck;
+			list.appendsChild(listitem);
+		}
+	}
+
+
+
+	function postData(form){
+		let body={};
+		for(let inputty of form){
+			if(inputty.name){
+			body[inputty.name] = inputty.value;			
+			}
+		}
+		let body=(JSON.stringify(body));
+		let request = new XMLHttpRequest();
+		request.open("POST", 'http://localhost:9100/newDinosaur');
+		request.setRequestHeader("Content-Type","application/JSON")
+		request.onload=function(){
+				getInfo();
+		}
+		request.send(body);
+	}
+
+
+
+
+	
+
+</script>

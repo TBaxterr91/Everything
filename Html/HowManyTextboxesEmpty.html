@@ -1,0 +1,36 @@
+<html>
+<form>
+    <input type="text" id="t1">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="button" onclick="check()">
+</form>
+<script>
+var reft1;
+    function check(){
+        reft1=window.document.getElementById("t1");
+        var fr= window.document.forms[0];
+    var empty = 0;
+    for(var i=0;i<fr.elements.length;i++){
+        if(fr.elements[i].value==""){
+        empty ++;
+        }
+    }
+    window.alert(empty+"this many are empty");
+    reft1.focus();
+    }
+    </script>
+
+    </html>

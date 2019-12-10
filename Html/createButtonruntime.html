@@ -1,0 +1,19 @@
+<html>
+
+<body>
+<input type="Button" value="Create" onclick="createbutton()">
+</body>
+
+
+<script>
+function createbutton(){
+var Btn=document.createElement("input");
+Btn.type="button";
+Btn.value="Click";
+Btn.onclick= function(){
+			alert("Hello");
+			};
+document.body.appendChild(Btn);
+}
+</script>
+</html>

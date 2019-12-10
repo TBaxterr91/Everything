@@ -1,0 +1,19 @@
+	<HTML>
+	<Body onload="CreateRandomBox()">
+
+		<script>
+ 	function CreateRandomBox(){
+ 	var timer=window.setInterval( function CreateRandomBox(){
+  		var span=document.createElement("span");
+  		var rleft=parseInt(Math.random()*1000);
+  		var rtop=parseInt(Math.random()*1000);
+
+  		span.style="height:50px; width:50px; background-color:red; visibility:visible;"
+  		span.style.position="absolute";
+  		span.style.left=rleft;
+  		span.style.top=rtop;
+  		document.body.appendChild(span);
+  	},100);
+  }
+</script>
+  </HTML>
