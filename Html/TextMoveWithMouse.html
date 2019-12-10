@@ -1,0 +1,18 @@
+
+<Body onmousemove="dosomething()">
+
+<span style="position:absolute;top:0;left:0" id="nbs">
+	Nationwide
+</span>
+
+<html>
+	<script>
+	function dosomething(){
+	var X = window.event.clientX;
+	var Y = window.event.clientY;
+	var ref1=window.document.getElementById("nbs");
+	ref1.style.top=Y;
+	ref1.style.left=X;
+	}
+	</script>
+</html>

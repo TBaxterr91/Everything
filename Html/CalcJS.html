@@ -1,0 +1,57 @@
+<html>
+	<script>
+​
+		var reft1,reft2,reft3;
+		var No1,No2;
+			function getValues(){
+			reft1= window.document.getElementById("t1");
+			reft2= window.document.getElementById("t2");
+			reft3= window.document.getElementById("t3");
+			 No1= parseInt(reft1.value);
+			 No2= parseInt(reft2.value);
+			 if(reft1.value==""){
+			 	window.alert("First box is empty mate");
+			 }
+			 if(reft2.value==""){
+			 	window.alert("Second box is empty mate");
+			 }
+			}
+​
+​
+			function addition(){
+			getValues();
+			reft3.value=No1+No2;
+			}
+			function subtraction(){
+			getValues();
+			reft3.value=No1-No2;
+			}
+			function division(){
+			getValues();
+			reft3.value=No1/No2;
+			}
+			function multiplication(){
+			getValues();
+			reft3.value=No1*No2;
+			}
+		</script>
+​
+		First Num: <input type="text" id="t1"><br>
+		Second Num <input type="text" id="t2"><br>
+		<input type="button" id="b1" value="+" onclick="addition()">
+		<input type="button" id="b2" value="-" onclick="subtraction()">
+		<input type="button" id="b3" value="/" onclick="division()">
+		<input type="button" id="b4" value="*" onclick="multiplication()"><br>
+		Result:<input type="text" id="t3">
+​
+​
+		<style>
+body {
+	background-image: url("https://www.google.com/search?q=ark+survival+evolved&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj0_-PE2a3lAhUymVwKHWSwD30Q_AUIEygD&biw=800&bih=559&dpr=1.5#imgrc=teLzd_OUZDDQMM:");
+        background-repeat:no-repeat;
+       background-size:cover;
+} 
+​
+</style>
+​
+		</html>

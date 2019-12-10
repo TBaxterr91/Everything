@@ -1,0 +1,31 @@
+<html>
+
+<form action="h1.html" method="Post" onsubmit="return checkvalues()">
+regnum<input type="text" id="r" Name="regnum1">
+name<input type="text" id="n" Name="name1">
+<input type="submit">
+
+</form>
+
+<script>
+
+function checkvalues(){
+	var ref1 = document.getElementById("r");
+	var ref2 = document.getElementById("n");
+
+	if(ref1.value==""){
+	alert("regnum not completed correctly");
+	return false;
+	}
+
+	else if(ref2.value==""){
+	alert("name not completed correctly");
+	return false;
+	}
+
+}
+
+</script>
+
+
+</html>
