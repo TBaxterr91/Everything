@@ -1,0 +1,15 @@
+<html>
+<%- include header.ejs%>
+<br>
+<% for(var i=0;i<results.length;i++){%>
+    Name: <%=results[i].name%> <br>
+    Regno: <%=results[i].regno%> <br>
+    <% if(role==2){%>
+    Address: <%=results[i].address%> <br>
+    <a href="/editConfirm/<%=results[i].regno%>"> Edit </a>
+    <a href="/delEntry/<%=results[i].regno%>"> Delete </a>
+    <%}%>
+    <br><br>
+<%}%>
+<%- include footer.ejs%>
+</html>
