@@ -1,0 +1,11 @@
+<html>
+<form action="/editConfirm" method="post">
+ <b>Edit User</b><br><br>
+ <input  name="regno" type="hidden" value='<%= record[0].regno %>' ><br><br>
+ New Name:
+ <input  name="nameE" type="text" value='<%= record[0].name %>' ><br><br>
+ New Address:
+ <input  name="addressE" type="text" value='<%= record[0].address %>' <br><br>
+ <input type="submit" >
+</form>
+</html>

@@ -1,0 +1,21 @@
+
+<html>
+ <center>
+ 	<H1> Database of Existing Users</H1> 
+ 	<table border='1'>
+ 		<tr>
+ 			<td> NAme </td>
+ 			<td> Address </td>
+ 		</tr>
+	 	<% Records.forEach(function(rec){
+	 	%>
+	 		<tr>
+		 		<td> <%= rec.Name %> </td>
+		 		<td> <%= rec.Address %></td>
+		 	<tr>
+
+	 	<%
+
+ })%>
+ 	<br>
+ </html>
