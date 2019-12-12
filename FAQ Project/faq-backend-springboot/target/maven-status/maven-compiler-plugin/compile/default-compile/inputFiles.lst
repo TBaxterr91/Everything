@@ -1,0 +1,9 @@
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/Entity/QuestionEntity.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/RatingsApplication.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/repository/QuestionRepo.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/service/AnswerService.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/repository/AnswerRepo.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/controller/QuestionController.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/controller/AnswerController.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/service/QuestionService.java
+/home/user/Desktop/FAQs/faq-backend-springboot/src/main/java/com/nationwide/Entity/AnswerEntity.java

@@ -1,0 +1,9 @@
+com/nationwide/controller/QuestionController.class
+com/nationwide/repository/AnswerRepo.class
+com/nationwide/service/AnswerService.class
+com/nationwide/Entity/AnswerEntity.class
+com/nationwide/Entity/QuestionEntity.class
+com/nationwide/service/QuestionService.class
+com/nationwide/repository/QuestionRepo.class
+com/nationwide/RatingsApplication.class
+com/nationwide/controller/AnswerController.class
